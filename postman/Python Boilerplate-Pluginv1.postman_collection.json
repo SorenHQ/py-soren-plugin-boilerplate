@@ -67,6 +67,26 @@
 			"response": []
 		},
 		{
+			"name": "Get Method Parms Dig",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/method/dig",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"dig"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Attributes",
 			"request": {
 				"method": "GET",
@@ -138,6 +158,35 @@
 						"api",
 						"method",
 						"mul"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call Method Dig",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"dig\",\n        \"title\": \"Scraper\",\n        \"description\": \"Web Target Scraper\",\n        \"params\": [\n            {\n                \"attr\": {\n                    \"regex_pattern\": {\n                        \"pattern\": \"^?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?$\",\n                        \"message\": \"Domain names are like sorenhq.com\"\n                    },\n                    \"input_type\": \"string\",\n                    \"secret\": false,\n                    \"required\": true\n                },\n                \"options\": [],\n                \"key\": \"target\",\n                \"placeholder\": \"Enter Domain Name\",\n                \"value\": [\"sorenhq.com\"],\n                \"title\": \"Enter Domain Name\",\n                \"description\": \"Enter Domain Name as Target\"\n            }\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/method/dig",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"dig"
 					]
 				}
 			},
