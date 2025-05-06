@@ -36,7 +36,7 @@ def runMethod(name:str, data: Dict[str, Any]):
             """
             For long-running processes under the Soren Protocol,
             a JobId key should be added to the response header. The action will then run asynchronously.
-            Upon task registration, the response will include the SOREN_JOBID header.
+            Upon task registration, the response will include the `soren-job-id` header.
             Subsequently, encountering this header will halt the current workflow, placing it in observer mode, 
             where it awaits job completion notification via the Soren platform's event channel.
             """
