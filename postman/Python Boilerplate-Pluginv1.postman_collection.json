@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "5e442bcb-afe3-49d9-a285-0190860464be",
+		"name": "Python Boilerplate-Pluginv1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39849951",
+		"_collection_link": "https://sorenhq.postman.co/workspace/SorenHQ-Workspace~54a32930-2827-467f-8346-4ef1d68ec7f1/collection/39849951-5e442bcb-afe3-49d9-a285-0190860464be?action=share&source=collection_link&creator=39849951"
+	},
+	"item": [
+		{
+			"name": "Show All Methods",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/methods",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Method Parms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/method/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Method Parms Mul",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/method/mul",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"mul"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Attributes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/attributes",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call Method",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"add\",\n    \"title\": \"Add\",\n    \"description\": \"add numbers\",\n    \"params\": [\n        {\n            \"attr\": {\n                \"regex_pattern\": {\n                    \"pattern\": \"^[\\\\d]+$\",\n                    \"message\": \"Input numbers must be between 0 to 99999\"\n                },\n                \"input_type\": \"string[]\",\n                \"secret\": false,\n                \"required\": true\n            },\n            \"options\": [],\n            \"key\": \"num\",\n            \"placeholder\": \"input number\",\n            \"value\": [2,3,1,8],\n            \"title\": \"Enter Number\",\n            \"description\": \"Enter numbers\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/method/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call Method Mul",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mul\",\n    \"title\": \"Multiply\",\n    \"description\": \"Multiply 2 numbers\",\n    \"params\": [\n        {\n            \"attr\": {\n                \"regex_pattern\": {\n                    \"pattern\": \"^[\\\\d]+$\",\n                    \"message\": \"Input numbers must be between 0 to 99999\"\n                },\n                \"input_type\": \"number\",\n                \"secret\": false,\n                \"required\": true\n            },\n            \"options\": [],\n            \"key\": \"number_a\",\n            \"placeholder\": \"input number #1\",\n            \"value\": [\n                7\n            ],\n            \"title\": \"Enter Number\",\n            \"description\": \"Enter numbers\"\n        },\n        {\n            \"attr\": {\n                \"regex_pattern\": {\n                    \"pattern\": \"^[\\\\d]+$\",\n                    \"message\": \"Input numbers must be between 0 to 99999\"\n                },\n                \"input_type\": \"number\",\n                \"secret\": false,\n                \"required\": true\n            },\n            \"options\": [],\n            \"key\": \"number_b\",\n            \"placeholder\": \"input number #2\",\n            \"value\": [\n                2\n            ],\n            \"title\": \"Enter Number\",\n            \"description\": \"Enter numbers\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/method/mul",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"mul"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
