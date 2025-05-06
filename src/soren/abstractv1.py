@@ -19,3 +19,4 @@ class IAction(ABC):
     def whoami(self):
         """Returns action name and description."""
         pass
+    

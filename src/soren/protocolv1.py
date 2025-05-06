@@ -29,8 +29,20 @@ def getMethodParams(name:str):
 
 @router.post("/method/{name}")
 def runMethod(name:str, data: Dict[str, Any]):
+
     try:
-        return JSONResponse(content={"data":actions[name]().run(data),"error":None})
+        method = actions[name]()
+        if hasattr(method, "long_running_process"):# 
+            """
+            For long-running processes under the Soren Protocol,
+            a JobId key should be added to the response header. The action will then run asynchronously.
+            Upon task registration, the response will include the SOREN_JOBID header.
+            Subsequently, encountering this header will halt the current workflow, placing it in observer mode, 
+            where it awaits job completion notification via the Soren platform's event channel.
+            """
+            return  JSONResponse(content={"data":method.run(data),"error":None},headers=({"soren-job-id":method.getJobId()}))
+        else:
+            return JSONResponse(content={"data":method.run(data),"error":None})
     except Exception as e:     
         return JSONResponse(status_code=404, content=dict({"code":404,"message":"method not found","error":e.args})) 
 
