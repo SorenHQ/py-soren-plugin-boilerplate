@@ -12,5 +12,11 @@ app.include_router(prefix="/api",router=sorenInterface)
 
 #Soren Version is Under Soren Protocol  , it is GETMethod and return Information's About Version of Itself and Soren Protocol
 @app.get("/version")
-async def health():
-    return {"protocol": "v1"}
+async def intro():
+    return   {
+        "name": "pyCalc",
+        "author": "soren-team",
+        "version": "v8.7.1",
+        "proto": "v0.0.1",
+        "schema_version": "srn-schema-v1"
+  }
